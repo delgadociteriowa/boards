@@ -1,13 +1,20 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Navigation = () => (
   <nav className='nav'>
     <div className='nav__container'>
-      <h2 className='nav__title brand__title'>♞BOARDS</h2>
-      <a href='/' className='nav__link'>
+      <h2 className='nav__title brand__title'>
+        <Link className='brand__title__link' to='/'>
+          ♞BOARDS
+        </Link>
+      </h2>
+      <Link to='/games' className='nav__link'>
         games
-      </a>
-      <a href='/' className='nav__link'>
+      </Link>
+      <Link to='/about' className='nav__link'>
         about
-      </a>
+      </Link>
     </div>
   </nav>
 );

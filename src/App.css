@@ -43,6 +43,11 @@ body {
   font-size: 1.75rem;
 }
 
+.brand__title__link {
+  color: #fff;
+  text-decoration: none;
+}
+
 .nav__title--game {
   font-weight: 100;
   font-size: 1.25rem;

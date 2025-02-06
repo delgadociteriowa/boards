@@ -1,30 +1,48 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import githubIcon from '../assets/github-icon.svg';
 import behanceIcon from '../assets/behance-icon.svg';
 
 const Footer = () => (
   <footer className='footer'>
     <div className='footer__container'>
-      <a href='/' className='footer__logo'>
+      <Link to='/' className='footer__logo'>
         ♞
-      </a>
-      <a href='/' className='footer__link'>
+      </Link>
+      <Link to='/games' className='footer__link'>
         games
-      </a>
-      <a href='/' className='footer__link'>
+      </Link>
+      <Link to='/about' className='footer__link'>
         about
-      </a>
-      <a href='/' className='footer__link'>
+      </Link>
+      <a
+        href='https://delgadociteriowa.github.io/main/'
+        target='_blank'
+        rel='noreferrer'
+        className='footer__link'
+      >
         delgadociterio
       </a>
       <div className='social'>
-        <a href='/' className='social__logo social__github'>
+        <a
+          href='https://github.com/delgadociteriowa/boards'
+          target='_blank'
+          rel='noreferrer'
+          className='social__logo social__github'
+        >
           <img
             className='social__img'
             src={githubIcon}
             alt='github icon boxicons.com'
           />
         </a>
-        <a href='/' className='social__logo'>
+        <a
+          href='https://www.behance.net/delgadociterio'
+          target='_blank'
+          rel='noreferrer'
+          className='social__logo'
+        >
           <img
             className='social__img'
             src={behanceIcon}

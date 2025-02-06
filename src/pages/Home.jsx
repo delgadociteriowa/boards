@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import chessIcon from '../assets/chess-icon.svg';
 import saveIcon from '../assets/save-icon.svg';
 import devicesIcon from '../assets/devices-icon.svg';
@@ -29,9 +32,9 @@ function Home() {
               <br /> no hard steps either. Just fun
               <br /> with your friends and family
             </p>
-            <a href='/' className='hero__cta mobile__box__cta'>
+            <Link to='/games' className='hero__cta mobile__box__cta'>
               PLAY NOW
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -79,9 +82,9 @@ function Home() {
               Play with your friends and
               <br /> make them your foes!
             </p>
-            <a href='/' className='chess__cta mobile__box__cta'>
+            <Link to='/chess' className='chess__cta mobile__box__cta'>
               NEW GAME
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -91,7 +94,12 @@ function Home() {
         <div className='games__container'>
           <h2 className='games__title'>Select a game</h2>
           <div className='games__items'>
-            <GameCard title={'CHESS'} img={gameChessImg} ready={true} />
+            <GameCard
+              title={'CHESS'}
+              game={'chess'}
+              img={gameChessImg}
+              ready={true}
+            />
             <GameCard title={'CHECKERS'} img={gameCheckersImg} ready={false} />
             <GameCard title={'GO'} img={gameGoImg} ready={false} />
           </div>
