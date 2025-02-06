@@ -5,12 +5,8 @@ import chessIcon from '../assets/chess-icon.svg';
 import saveIcon from '../assets/save-icon.svg';
 import devicesIcon from '../assets/devices-icon.svg';
 
-import gameChessImg from '../assets/games-chess.png';
-import gameCheckersImg from '../assets/games-checkers.png';
-import gameGoImg from '../assets/games-go.png';
-
+import GamesSelection from '../components/GamesSelection';
 import FeatureCard from '../components/FeatureCard';
-import GameCard from '../components/GameCard';
 
 function Home() {
   return (
@@ -90,21 +86,7 @@ function Home() {
       </section>
 
       {/* GAMES */}
-      <section className='games'>
-        <div className='games__container'>
-          <h2 className='games__title'>Select a game</h2>
-          <div className='games__items'>
-            <GameCard
-              title={'CHESS'}
-              game={'chess'}
-              img={gameChessImg}
-              ready={true}
-            />
-            <GameCard title={'CHECKERS'} img={gameCheckersImg} ready={false} />
-            <GameCard title={'GO'} img={gameGoImg} ready={false} />
-          </div>
-        </div>
-      </section>
+      <GamesSelection />
     </>
   );
 }

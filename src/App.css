@@ -288,6 +288,10 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .games__title{
@@ -302,6 +306,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
 
 .game__bck {
@@ -478,6 +484,11 @@ body {
   }
 
   /*games*/
+  
+  .games__page {
+    padding-bottom: 400px;
+  }
+
   .games__items {
     flex-direction: row;
     gap: 60px;
