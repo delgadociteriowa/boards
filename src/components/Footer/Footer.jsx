@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './Footer.css';
 import githubIcon from '../../assets/github-icon.svg';
 import behanceIcon from '../../assets/behance-icon.svg';
 

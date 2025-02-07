@@ -1,3 +1,4 @@
+import './GamesSelection.css';
 import GameCard from '../GameCard/GameCard';
 import GameChessImg from '../../assets/games-chess.png';
 import GameCheckersImg from '../../assets/games-chess.png';

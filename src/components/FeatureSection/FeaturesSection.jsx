@@ -1,3 +1,5 @@
+import './FeaturesSection.css';
+
 import chessIcon from '../../assets/chess-icon.svg';
 import saveIcon from '../../assets/save-icon.svg';
 import devicesIcon from '../../assets/devices-icon.svg';

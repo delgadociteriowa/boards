@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './HeroSection.css';
+
 const HeroSection = () => (
   <header className='hero mobile__box'>
     <div className='hero__container'>

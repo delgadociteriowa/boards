@@ -1,3 +1,5 @@
+import './Chess.css';
+
 const Chess = () => {
   return (
     <>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './ChessSection.css';
 
 const ChessSection = () => (
   <section className='chess mobile__box'>
