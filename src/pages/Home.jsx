@@ -8,7 +8,7 @@ import devicesIcon from '../assets/devices-icon.svg';
 import GamesSelection from '../components/GamesSelection';
 import FeatureCard from '../components/FeatureCard';
 
-function Home() {
+const Home = () => {
   return (
     <>
       {/* HERO */}
@@ -89,6 +89,6 @@ function Home() {
       <GamesSelection />
     </>
   );
-}
+};
 
 export default Home;

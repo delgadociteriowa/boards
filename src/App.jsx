@@ -8,7 +8,7 @@ import Chess from './pages/Chess';
 import About from './pages/About';
 import Games from './pages/Games';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <MainLayout>
@@ -21,6 +21,6 @@ function App() {
       </MainLayout>
     </Router>
   );
-}
+};
 
 export default App;
