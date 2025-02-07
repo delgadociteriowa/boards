@@ -1,7 +1,7 @@
-import GameCard from './GameCard';
-import GameChessImg from '../assets/games-chess.png';
-import GameCheckersImg from '../assets/games-chess.png';
-import GameGoImg from '../assets/games-chess.png';
+import GameCard from '../GameCard/GameCard';
+import GameChessImg from '../../assets/games-chess.png';
+import GameCheckersImg from '../../assets/games-chess.png';
+import GameGoImg from '../../assets/games-chess.png';
 
 const GamesSelection = ({ isPage }) => {
   return (

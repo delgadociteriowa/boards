@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import githubIcon from '../assets/github-icon.svg';
-import behanceIcon from '../assets/behance-icon.svg';
+import githubIcon from '../../assets/github-icon.svg';
+import behanceIcon from '../../assets/behance-icon.svg';
 
 const Footer = () => (
   <footer className='footer'>

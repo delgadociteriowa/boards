@@ -1,4 +1,4 @@
-import GamesSelection from '../components/GamesSelection';
+import GamesSelection from '../../components/GamesSelection/GamesSelection';
 
 const Games = () => <GamesSelection isPage={true} />;
 

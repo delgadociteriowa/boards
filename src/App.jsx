@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import MainLayout from './layouts/MainLayout';
-import Home from './pages/Home';
-import Chess from './pages/Chess';
-import About from './pages/About';
-import Games from './pages/Games';
+import MainLayout from './layouts/MainLayout/MainLayout';
+import Home from './pages/Home/Home';
+import Chess from './pages/Chess/Chess';
+import About from './pages/About/About';
+import Games from './pages/Games/Games';
 
 const App = () => {
   return (
