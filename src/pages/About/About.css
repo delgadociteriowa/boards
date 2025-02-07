@@ -1,0 +1,32 @@
+.about{
+  padding: 50px 0 70px;
+  background-color: #ebebeb;;
+  color: #161616;
+  display: flex;
+  justify-content: center;
+}
+
+.about__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__title{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about__text{
+  padding: 0 20px;
+}
+
+@media (min-width:768px) { 
+  .about__page {
+    padding-bottom: 400px;
+  }
+}

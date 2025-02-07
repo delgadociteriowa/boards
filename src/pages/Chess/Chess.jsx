@@ -187,6 +187,7 @@ const Chess = () => {
             <div className='chess__place chess__discard dd8 corner-4'></div>
           </div>
           <div className='board__chess__options'>
+            <button className='option_button'>New Game</button>
             <button className='option_button'>Restart Game</button>
             <button className='option_button'>Save Game</button>
             <button className='option_button'>Help</button>
