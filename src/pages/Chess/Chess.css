@@ -79,7 +79,7 @@
    -1px -1px 0 #70a39b;
 }
 
-.corner-1 {
+/* .corner-1 {
   border-radius: 8px 0 0 0;
 }
 
@@ -93,7 +93,7 @@
 
 .corner-4 {
   border-radius: 0 0 8px 0;
-}
+} */
 
 
 @media (min-width:768px) {
