@@ -1,9 +1,32 @@
 import './ChessSquare.css';
 
-const ChessSquare = ({ squareType, piece, pieceColor }) => {
+const ChessSquare = ({
+  id,
+  squareType,
+  piece,
+  pieceName,
+  pieceColor,
+  pieceSelected,
+  squareSelected,
+  selectedPiecePhase,
+  selectionPhase,
+}) => {
   return (
-    <div className={`chess__square ${squareType}`}>
-      <span className={`chess__piece ${pieceColor}__piece`}>{piece}</span>
+    <div
+      id={id}
+      className={`chess__square ${squareType} ${
+        pieceSelected && 'selected__square__piece'
+      }`}
+    >
+      <span
+        id={pieceName}
+        className={`chess__piece ${pieceColor}__piece ${
+          piece && selectionPhase && 'selectable__piece'
+        } ${pieceSelected && 'selected__piece'}`}
+        onClick={selectedPiecePhase}
+      >
+        {piece}
+      </span>
     </div>
   );
 };

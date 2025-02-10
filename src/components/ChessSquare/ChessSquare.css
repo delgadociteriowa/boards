@@ -42,4 +42,27 @@
   .chess__piece {
     font-size: 2em;
   }
+
+  /*needs other class because steps background: #bfffce;*/
+  .selectable__piece:hover {
+    font-size: 2.30em;
+    cursor: pointer;
+  }
+  
+  .selected__piece{
+    font-size: 2.45em;
+    cursor: pointer;
+  }
+  .selected__square__piece{
+    background-color: #c9ffe9;
+  }
+  .highlighted__square:hover {
+    background-color: #bfffce;
+  }
 }
+
+/*selected piece true
+- pieza se queda arriba y su cuadro highlighteado.
+- las demas piezas no deben tener selectable__piece:hover
+- Los square sin piece tienen .highlighted__square:hover 
+*/
