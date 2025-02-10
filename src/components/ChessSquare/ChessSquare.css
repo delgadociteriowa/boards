@@ -1,0 +1,45 @@
+.discard__square {
+  background-color: #002b23;
+}
+
+.white__square {
+  background-color: #dadada;  
+}
+
+.black__square {
+  background-color: #00584a;
+}
+
+.chess__square {
+  outline: 1px solid #004237;
+  display: flex;
+}
+
+.chess__piece {
+  margin: auto;
+  font-size: 1.5em;
+}
+
+.white__piece {
+  color: #f0f0f0;
+  text-shadow: 
+    1px 1px 0 black, 
+   -1px 1px 0 black, 
+    1px -1px 0 black, 
+   -1px -1px 0 black;
+}
+
+.black__piece {
+  color: #000;
+  text-shadow: 
+    1px 1px 0 #70a39b, 
+   -1px 1px 0 #70a39b, 
+    1px -1px 0 #70a39b, 
+   -1px -1px 0 #70a39b;
+}
+
+@media (min-width:768px) {
+  .chess__piece {
+    font-size: 2em;
+  }
+}

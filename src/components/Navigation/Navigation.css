@@ -1,11 +1,5 @@
-/*nav*/
-
 .nav {
   background-color: #004237;
-}
-
-.nav--game {
-  background-color: #002b23;
 }
 
 .nav__container {
@@ -19,11 +13,6 @@
   color: #fff;
 }
 
-.nav__container--game {
-  height: 40px;
-  justify-content: center;
-}
-
 .nav__title {
   font-weight: 100;
   font-size: 1.75rem;
@@ -34,12 +23,6 @@
   text-decoration: none;
 }
 
-.nav__title--game {
-  font-weight: 100;
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-}
-
 .nav__link:first-of-type {
   margin-left: auto;
 }
@@ -47,14 +30,4 @@
 .nav__link {
   color: #fff;
   text-decoration: none;
-}
-
-@media (min-width:768px) {
-  .nav__title--game {
-    font-size: 1.5rem;
-  }
-  
-  .nav__container--game {
-    height: 60px;
-  }
 }
