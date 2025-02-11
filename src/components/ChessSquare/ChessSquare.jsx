@@ -9,6 +9,7 @@ const ChessSquare = ({
   pieceSelected,
   squareSelected,
   selectedPiecePhase,
+  selectedSquarePhase,
   selectionPhase,
 }) => {
   return (
@@ -17,6 +18,7 @@ const ChessSquare = ({
       className={`chess__square ${squareType} ${
         pieceSelected && 'selected__square__piece'
       } ${!pieceSelected && !selectionPhase && 'highlighted__square'}`}
+      onClick={!selectionPhase ? selectedSquarePhase : null}
     >
       <span
         id={`${pieceName}-${pieceChar}-${pieceColor}`}

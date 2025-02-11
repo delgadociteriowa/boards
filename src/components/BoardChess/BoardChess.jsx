@@ -132,6 +132,41 @@ const BoardChess = () => {
     });
   };
 
+  const selectedSquarePhase = (e) => {
+    const pieceToRemove = selectedPiece;
+    const destinationSquare = e.target.id;
+
+    setChessGrid((prev) =>
+      prev.map((square) => {
+        if (square.pieceName === pieceToRemove.pieceName) {
+          return {
+            ...square,
+            pieceName: '',
+            pieceChar: '',
+            pieceColor: '',
+            pieceSelected: false,
+          };
+        }
+        if (square.id === destinationSquare) {
+          return {
+            ...square,
+            pieceName: pieceToRemove.pieceName,
+            pieceChar: pieceToRemove.pieceChar,
+            pieceColor: pieceToRemove.pieceColor,
+          };
+        }
+        return square;
+      })
+    );
+
+    setSelectedPiece({
+      pieceName: '',
+      pieceChar: '',
+      pieceColor: '',
+    });
+    setSelectionPhase(true);
+  };
+
   useEffect(() => {
     setNewGame();
   }, []);
@@ -151,8 +186,9 @@ const BoardChess = () => {
                   pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
-                  squareSelected={place.pieceSelected}
+                  squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
+                  selectedSquarePhase={selectedSquarePhase}
                   selectionPhase={selectionPhase}
                 />
               );
@@ -166,8 +202,9 @@ const BoardChess = () => {
                   pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
-                  squareSelected={place.pieceSelected}
+                  squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
+                  selectedSquarePhase={selectedSquarePhase}
                   selectionPhase={selectionPhase}
                 />
               );
@@ -183,8 +220,9 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.pieceSelected}
+                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
+                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
                     />
                   );
@@ -198,8 +236,9 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.pieceSelected}
+                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
+                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
                     />
                   );
@@ -215,8 +254,9 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.pieceSelected}
+                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
+                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
                     />
                   );
@@ -230,8 +270,9 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.pieceSelected}
+                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
+                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
                     />
                   );
