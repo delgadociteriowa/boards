@@ -24,7 +24,7 @@ const ChessSquare = ({
         className={`chess__piece ${pieceColor}__piece ${
           piece && selectionPhase && 'selectable__piece'
         } ${pieceSelected && 'selected__piece'}`}
-        onClick={selectedPiecePhase}
+        onClick={selectionPhase || pieceSelected ? selectedPiecePhase : null}
       >
         {piece}
       </span>
