@@ -3,8 +3,8 @@ import './ChessSquare.css';
 const ChessSquare = ({
   id,
   squareType,
-  piece,
   pieceName,
+  pieceChar,
   pieceColor,
   pieceSelected,
   squareSelected,
@@ -19,13 +19,13 @@ const ChessSquare = ({
       } ${!pieceSelected && !selectionPhase && 'highlighted__square'}`}
     >
       <span
-        id={pieceName}
+        id={`${pieceName}-${pieceChar}-${pieceColor}`}
         className={`chess__piece ${pieceColor}__piece ${
-          piece && selectionPhase && 'selectable__piece'
+          pieceChar && selectionPhase && 'selectable__piece'
         } ${pieceSelected && 'selected__piece'}`}
         onClick={selectionPhase || pieceSelected ? selectedPiecePhase : null}
       >
-        {piece}
+        {pieceChar}
       </span>
     </div>
   );

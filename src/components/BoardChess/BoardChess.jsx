@@ -10,8 +10,8 @@ const BoardChess = () => {
       for (let j = 1; j <= 8; j++) {
         grid.push({
           id: `${i}-${j}`,
-          piece: '',
           pieceName: '',
+          pieceChar: '',
           pieceColor: 'empty',
           pieceSelected: false,
           squareSelected: false,
@@ -21,7 +21,11 @@ const BoardChess = () => {
     return grid;
   });
   const [selectionPhase, setSelectionPhase] = useState(true);
-  const [selectedPiece, setSelectedPiece] = useState('');
+  const [selectedPiece, setSelectedPiece] = useState({
+    pieceName: '',
+    pieceChar: '',
+    pieceColor: '',
+  });
 
   // const [selectedPiecePhase, setSelectedPiecePhase] = useState(false);
 
@@ -43,8 +47,8 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[0];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          piece: pieces[pieceIndex],
           pieceName: pieceNames[pieceIndex],
+          pieceChar: pieces[pieceIndex],
           pieceColor: 'black',
         };
         pieceIndex++;
@@ -56,8 +60,8 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[1];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          piece: '♟',
           pieceName: pieceNames[pieceIndex],
+          pieceChar: '♟',
           pieceColor: 'black',
         };
         pieceIndex++;
@@ -70,8 +74,8 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[2];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          piece: '♟',
           pieceName: pieceNames[pieceIndex],
+          pieceChar: '♟',
           pieceColor: 'white',
         };
         pieceIndex++;
@@ -83,8 +87,8 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[3];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          piece: pieces[pieceIndex],
           pieceName: pieceNames[pieceIndex],
+          pieceChar: pieces[pieceIndex],
           pieceColor: 'white',
         };
         pieceIndex++;
@@ -94,28 +98,38 @@ const BoardChess = () => {
   };
 
   const selectedPiecePhase = (e) => {
-    if (e.target.id === selectedPiece) {
+    if (e.target.id.split('-')[0] === selectedPiece.pieceName) {
       setChessGrid((prevChessGrid) =>
         prevChessGrid.map((square) =>
-          square.pieceName === e.target.id
+          square.pieceName === e.target.id.split('-')[0]
             ? { ...square, pieceSelected: false }
             : square
         )
       );
       setSelectionPhase(true);
-      setSelectedPiece('');
+      setSelectedPiece({
+        pieceName: '',
+        pieceChar: '',
+        pieceColor: '',
+      });
       return undefined;
     }
+
     if (!selectionPhase) return undefined;
+
     setChessGrid((prevChessGrid) =>
       prevChessGrid.map((square) =>
-        square.pieceName === e.target.id
+        square.pieceName === e.target.id.split('-')[0]
           ? { ...square, pieceSelected: true }
           : square
       )
     );
     setSelectionPhase(false);
-    setSelectedPiece(e.target.id);
+    setSelectedPiece({
+      pieceName: e.target.id.split('-')[0],
+      pieceChar: e.target.id.split('-')[1],
+      pieceColor: e.target.id.split('-')[2],
+    });
   };
 
   useEffect(() => {
@@ -133,8 +147,8 @@ const BoardChess = () => {
                   key={place.id}
                   id={place.id}
                   squareType={'discard__square'}
-                  piece={place.piece}
                   pieceName={place.pieceName}
+                  pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
                   squareSelected={place.pieceSelected}
@@ -148,8 +162,8 @@ const BoardChess = () => {
                   key={place.id}
                   id={place.id}
                   squareType={'discard__square'}
-                  piece={place.piece}
                   pieceName={place.pieceName}
+                  pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
                   squareSelected={place.pieceSelected}
@@ -165,8 +179,8 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'white__square'}
-                      piece={place.piece}
                       pieceName={place.pieceName}
+                      pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.pieceSelected}
@@ -180,8 +194,8 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'black__square'}
-                      piece={place.piece}
                       pieceName={place.pieceName}
+                      pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.pieceSelected}
@@ -197,8 +211,8 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'black__square'}
-                      piece={place.piece}
                       pieceName={place.pieceName}
+                      pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.pieceSelected}
@@ -212,8 +226,8 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'white__square'}
-                      piece={place.piece}
                       pieceName={place.pieceName}
+                      pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.pieceSelected}
