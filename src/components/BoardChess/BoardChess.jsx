@@ -21,7 +21,6 @@ const BoardChess = () => {
     return grid;
   });
   const [selectionPhase, setSelectionPhase] = useState(true);
-  const [destinationPhase, setDestinationPhase] = useState(false);
   const [selectedPiece, setSelectedPiece] = useState('');
 
   // const [selectedPiecePhase, setSelectedPiecePhase] = useState(false);
@@ -104,7 +103,6 @@ const BoardChess = () => {
         )
       );
       setSelectionPhase(true);
-      setDestinationPhase(false);
       setSelectedPiece('');
       return undefined;
     }
@@ -117,7 +115,6 @@ const BoardChess = () => {
       )
     );
     setSelectionPhase(false);
-    setDestinationPhase(true);
     setSelectedPiece(e.target.id);
   };
 
@@ -143,7 +140,6 @@ const BoardChess = () => {
                   squareSelected={place.pieceSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
-                  destinationPhase={destinationPhase}
                 />
               );
             } else if (i > 79) {
@@ -159,7 +155,6 @@ const BoardChess = () => {
                   squareSelected={place.pieceSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
-                  destinationPhase={destinationPhase}
                 />
               );
             } else {
@@ -177,7 +172,6 @@ const BoardChess = () => {
                       squareSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      destinationPhase={destinationPhase}
                     />
                   );
                 } else {
@@ -193,7 +187,6 @@ const BoardChess = () => {
                       squareSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      destinationPhase={destinationPhase}
                     />
                   );
                 }
@@ -211,7 +204,6 @@ const BoardChess = () => {
                       squareSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      destinationPhase={destinationPhase}
                     />
                   );
                 } else {
@@ -227,7 +219,6 @@ const BoardChess = () => {
                       squareSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      destinationPhase={destinationPhase}
                     />
                   );
                 }
