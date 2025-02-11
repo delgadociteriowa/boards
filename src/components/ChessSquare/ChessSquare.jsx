@@ -10,13 +10,14 @@ const ChessSquare = ({
   squareSelected,
   selectedPiecePhase,
   selectionPhase,
+  destinationPhase,
 }) => {
   return (
     <div
       id={id}
       className={`chess__square ${squareType} ${
         pieceSelected && 'selected__square__piece'
-      }`}
+      } ${!pieceSelected && destinationPhase && 'highlighted__square'}`}
     >
       <span
         id={pieceName}

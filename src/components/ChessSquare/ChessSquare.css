@@ -53,11 +53,14 @@
     font-size: 2.45em;
     cursor: pointer;
   }
+
   .selected__square__piece{
     background-color: #c9ffe9;
   }
+
   .highlighted__square:hover {
-    background-color: #bfffce;
+    background-color: #d9fcee;
+    cursor: pointer;
   }
 }
 
