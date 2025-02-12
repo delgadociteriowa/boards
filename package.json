@@ -34,5 +34,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://delgadociteriowa.github.io/boards"
+  "homepage": "https://delgadociteriowa.github.io/boards",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
