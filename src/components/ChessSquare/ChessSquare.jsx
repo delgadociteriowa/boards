@@ -10,7 +10,6 @@ const ChessSquare = ({
   squareSelected,
   selectedPiecePhase,
   selectionPhase,
-  mouseOverSquare,
   selectedSquarePhase,
 }) => {
   return (
@@ -19,7 +18,6 @@ const ChessSquare = ({
       className={`chess__square ${squareType} ${
         pieceSelected && 'selected__square__piece'
       } ${!pieceSelected && !selectionPhase && 'highlighted__square'}`}
-      onMouseEnter={mouseOverSquare}
       onClick={!selectionPhase ? selectedSquarePhase : null}
     >
       <span
