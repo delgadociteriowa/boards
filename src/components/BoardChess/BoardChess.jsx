@@ -42,8 +42,20 @@ const BoardChess = () => {
       const pieces = '♜♞♝♛♚♝♞♜';
       let pieceIndex = 0;
 
+      // Clean discard 1
+      for (let i = 0; i <= 15; i++) {
+        newChessGrid[i] = {
+          ...newChessGrid[i],
+          pieceName: '',
+          pieceChar: '',
+          pieceColor: 'empty',
+        };
+        pieceIndex++;
+      }
+
+      pieceIndex = 0;
+
       // set black pieces
-      // implement switch with ranges
       for (let i = 16; i <= 23; i++) {
         const pieceNames = pieceNamesGroup[0];
         newChessGrid[i] = {
@@ -64,6 +76,19 @@ const BoardChess = () => {
           pieceName: pieceNames[pieceIndex],
           pieceChar: '♟',
           pieceColor: 'black',
+        };
+        pieceIndex++;
+      }
+
+      pieceIndex = 0;
+
+      // Clean center
+      for (let i = 32; i <= 63; i++) {
+        newChessGrid[i] = {
+          ...newChessGrid[i],
+          pieceName: '',
+          pieceChar: '',
+          pieceColor: 'empty',
         };
         pieceIndex++;
       }
@@ -94,6 +119,18 @@ const BoardChess = () => {
         };
         pieceIndex++;
       }
+
+      // Clean center
+      for (let i = 80; i <= 95; i++) {
+        newChessGrid[i] = {
+          ...newChessGrid[i],
+          pieceName: '',
+          pieceChar: '',
+          pieceColor: 'empty',
+        };
+        pieceIndex++;
+      }
+
       return newChessGrid;
     });
   };
@@ -288,10 +325,9 @@ const BoardChess = () => {
           })}
         </div>
         <div className='board__chess__options'>
-          <button className='option_button'>New Game</button>
-          <button className='option_button'>Restart Game</button>
-          <button className='option_button'>Save Game</button>
-          <button className='option_button'>{overSquare}</button>
+          <button className='option_button' onClick={setNewGame}>
+            Restart Game
+          </button>
         </div>
       </div>
     </section>

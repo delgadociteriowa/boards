@@ -64,4 +64,8 @@
     margin-bottom: 18px;
     box-shadow: 0 10px 10px -8px #808080;
   }
+  
+  .option_button:hover {
+    cursor: pointer;
+  }
 }

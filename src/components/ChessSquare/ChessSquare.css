@@ -68,9 +68,3 @@
     pointer-events: none;
   }
 }
-
-/*selected piece true
-- pieza se queda arriba y su cuadro highlighteado.
-- las demas piezas no deben tener selectable__piece:hover
-- Los square sin piece tienen .highlighted__square:hover 
-*/
