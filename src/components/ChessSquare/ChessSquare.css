@@ -38,6 +38,14 @@
    -1px -1px 0 #70a39b;
 }
 
+.selected__square__piece{
+  background-color: #c9ffe9;
+}
+
+.no__pointer{
+  pointer-events: none;
+}
+
 @media (min-width:768px) {
   .chess__piece {
     font-size: 2em;
@@ -55,16 +63,8 @@
     cursor: pointer;
   }
 
-  .selected__square__piece{
-    background-color: #c9ffe9;
-  }
-
   .highlighted__square:hover {
     background-color: #d9fcee;
     cursor: pointer;
-  }
-
-  .no__pointer{
-    pointer-events: none;
   }
 }
