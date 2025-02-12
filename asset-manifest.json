@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/boards/static/css/main.6a45911e.css",
+    "main.js": "/boards/static/js/main.a024c355.js",
+    "static/js/488.e8cf6ccf.chunk.js": "/boards/static/js/488.e8cf6ccf.chunk.js",
+    "static/media/section-chess.png": "/boards/static/media/section-chess.9e7197fe77edc5225e9f.png",
+    "static/media/header-chess.png": "/boards/static/media/header-chess.9933d0ff56db083772d4.png",
+    "static/media/games-chess.png": "/boards/static/media/games-chess.76a66dcb75e5dc3b521f.png",
+    "static/media/behance-icon.svg": "/boards/static/media/behance-icon.2fafc93996688150df0632a44a861908.svg",
+    "static/media/github-icon.svg": "/boards/static/media/github-icon.882cf48963aa536f535a1c9c830295d1.svg",
+    "index.html": "/boards/index.html",
+    "static/media/devices-icon.svg": "/boards/static/media/devices-icon.0d521c6376ec0f288c319b1e04bcfd71.svg",
+    "static/media/save-icon.svg": "/boards/static/media/save-icon.d760daf1551c75f6b751835ff2a2f595.svg",
+    "static/media/chess-icon.svg": "/boards/static/media/chess-icon.01556823b9d5c9847a01ef1aec648fe7.svg",
+    "main.6a45911e.css.map": "/boards/static/css/main.6a45911e.css.map",
+    "main.a024c355.js.map": "/boards/static/js/main.a024c355.js.map",
+    "488.e8cf6ccf.chunk.js.map": "/boards/static/js/488.e8cf6ccf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a45911e.css",
+    "static/js/main.a024c355.js"
+  ]
+}
