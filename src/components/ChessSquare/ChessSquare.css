@@ -41,6 +41,7 @@
 @media (min-width:768px) {
   .chess__piece {
     font-size: 2em;
+    user-select: none;
   }
 
   /*needs other class because steps background: #bfffce;*/
@@ -61,6 +62,10 @@
   .highlighted__square:hover {
     background-color: #d9fcee;
     cursor: pointer;
+  }
+
+  .no__pointer{
+    pointer-events: none;
   }
 }
 

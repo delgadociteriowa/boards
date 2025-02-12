@@ -21,6 +21,7 @@ const BoardChess = () => {
     return grid;
   });
   const [selectionPhase, setSelectionPhase] = useState(true);
+  const [overSquare, setOverSquare] = useState('');
   const [selectedPiece, setSelectedPiece] = useState({
     pieceName: '',
     pieceChar: '',
@@ -132,38 +133,37 @@ const BoardChess = () => {
     });
   };
 
-  const selectedSquarePhase = (e) => {
-    const pieceToRemove = selectedPiece;
-    const destinationSquare = e.target.id;
+  const mouseOverSquare = (e) => setOverSquare(e.target.id);
 
-    setChessGrid((prev) =>
-      prev.map((square) => {
-        if (square.pieceName === pieceToRemove.pieceName) {
-          return {
-            ...square,
-            pieceName: '',
-            pieceChar: '',
-            pieceColor: '',
-            pieceSelected: false,
-          };
-        }
-        if (square.id === destinationSquare) {
-          return {
-            ...square,
-            pieceName: pieceToRemove.pieceName,
-            pieceChar: pieceToRemove.pieceChar,
-            pieceColor: pieceToRemove.pieceColor,
-          };
-        }
-        return square;
-      })
+  const selectedSquarePhase = () => {
+    setChessGrid((prevChessGrid) =>
+      prevChessGrid.map((square) =>
+        square.pieceName === selectedPiece.pieceName
+          ? {
+              ...square,
+              pieceName: '',
+              pieceChar: '',
+              pieceColor: '',
+              pieceSelected: false,
+            }
+          : square
+      )
     );
 
-    setSelectedPiece({
-      pieceName: '',
-      pieceChar: '',
-      pieceColor: '',
-    });
+    setChessGrid((prevChessGrid) =>
+      prevChessGrid.map((square) =>
+        square.id === overSquare
+          ? {
+              ...square,
+              pieceName: selectedPiece.pieceName,
+              pieceChar: selectedPiece.pieceChar,
+              pieceColor: selectedPiece.pieceColor,
+            }
+          : square
+      )
+    );
+
+    setSelectedPiece({ pieceName: '', pieceChar: '', pieceColor: '' });
     setSelectionPhase(true);
   };
 
@@ -188,8 +188,9 @@ const BoardChess = () => {
                   pieceSelected={place.pieceSelected}
                   squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
-                  selectedSquarePhase={selectedSquarePhase}
                   selectionPhase={selectionPhase}
+                  mouseOverSquare={mouseOverSquare}
+                  selectedSquarePhase={selectedSquarePhase}
                 />
               );
             } else if (i > 79) {
@@ -204,8 +205,9 @@ const BoardChess = () => {
                   pieceSelected={place.pieceSelected}
                   squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
-                  selectedSquarePhase={selectedSquarePhase}
                   selectionPhase={selectionPhase}
+                  mouseOverSquare={mouseOverSquare}
+                  selectedSquarePhase={selectedSquarePhase}
                 />
               );
             } else {
@@ -222,8 +224,9 @@ const BoardChess = () => {
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
-                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
+                      mouseOverSquare={mouseOverSquare}
+                      selectedSquarePhase={selectedSquarePhase}
                     />
                   );
                 } else {
@@ -238,8 +241,9 @@ const BoardChess = () => {
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
-                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
+                      mouseOverSquare={mouseOverSquare}
+                      selectedSquarePhase={selectedSquarePhase}
                     />
                   );
                 }
@@ -256,8 +260,9 @@ const BoardChess = () => {
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
-                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
+                      mouseOverSquare={mouseOverSquare}
+                      selectedSquarePhase={selectedSquarePhase}
                     />
                   );
                 } else {
@@ -272,8 +277,9 @@ const BoardChess = () => {
                       pieceSelected={place.pieceSelected}
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
-                      selectedSquarePhase={selectedSquarePhase}
                       selectionPhase={selectionPhase}
+                      mouseOverSquare={mouseOverSquare}
+                      selectedSquarePhase={selectedSquarePhase}
                     />
                   );
                 }
@@ -285,7 +291,7 @@ const BoardChess = () => {
           <button className='option_button'>New Game</button>
           <button className='option_button'>Restart Game</button>
           <button className='option_button'>Save Game</button>
-          <button className='option_button'>Help</button>
+          <button className='option_button'>{overSquare}</button>
         </div>
       </div>
     </section>

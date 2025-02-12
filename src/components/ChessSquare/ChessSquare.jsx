@@ -9,8 +9,9 @@ const ChessSquare = ({
   pieceSelected,
   squareSelected,
   selectedPiecePhase,
-  selectedSquarePhase,
   selectionPhase,
+  mouseOverSquare,
+  selectedSquarePhase,
 }) => {
   return (
     <div
@@ -18,13 +19,16 @@ const ChessSquare = ({
       className={`chess__square ${squareType} ${
         pieceSelected && 'selected__square__piece'
       } ${!pieceSelected && !selectionPhase && 'highlighted__square'}`}
+      onMouseEnter={mouseOverSquare}
       onClick={!selectionPhase ? selectedSquarePhase : null}
     >
       <span
         id={`${pieceName}-${pieceChar}-${pieceColor}`}
         className={`chess__piece ${pieceColor}__piece ${
           pieceChar && selectionPhase && 'selectable__piece'
-        } ${pieceSelected && 'selected__piece'}`}
+        } ${pieceSelected && 'selected__piece'} ${
+          !selectionPhase && 'no__pointer'
+        }`}
         onClick={selectionPhase || pieceSelected ? selectedPiecePhase : null}
       >
         {pieceChar}
