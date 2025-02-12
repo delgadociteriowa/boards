@@ -21,7 +21,7 @@ const BoardChess = () => {
     return grid;
   });
   const [selectionPhase, setSelectionPhase] = useState(true);
-  const [overSquare, setOverSquare] = useState('');
+
   const [selectedPiece, setSelectedPiece] = useState({
     pieceName: '',
     pieceChar: '',
@@ -170,9 +170,7 @@ const BoardChess = () => {
     });
   };
 
-  const mouseOverSquare = (e) => setOverSquare(e.target.id);
-
-  const selectedSquarePhase = () => {
+  const selectedSquarePhase = (e) => {
     setChessGrid((prevChessGrid) =>
       prevChessGrid.map((square) =>
         square.pieceName === selectedPiece.pieceName
@@ -189,7 +187,7 @@ const BoardChess = () => {
 
     setChessGrid((prevChessGrid) =>
       prevChessGrid.map((square) =>
-        square.id === overSquare
+        square.id === e.target.id
           ? {
               ...square,
               pieceName: selectedPiece.pieceName,
@@ -226,7 +224,6 @@ const BoardChess = () => {
                   squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
-                  mouseOverSquare={mouseOverSquare}
                   selectedSquarePhase={selectedSquarePhase}
                 />
               );
@@ -243,7 +240,6 @@ const BoardChess = () => {
                   squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
-                  mouseOverSquare={mouseOverSquare}
                   selectedSquarePhase={selectedSquarePhase}
                 />
               );
@@ -262,7 +258,6 @@ const BoardChess = () => {
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      mouseOverSquare={mouseOverSquare}
                       selectedSquarePhase={selectedSquarePhase}
                     />
                   );
@@ -279,7 +274,6 @@ const BoardChess = () => {
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      mouseOverSquare={mouseOverSquare}
                       selectedSquarePhase={selectedSquarePhase}
                     />
                   );
@@ -298,7 +292,6 @@ const BoardChess = () => {
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      mouseOverSquare={mouseOverSquare}
                       selectedSquarePhase={selectedSquarePhase}
                     />
                   );
@@ -315,7 +308,6 @@ const BoardChess = () => {
                       squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
-                      mouseOverSquare={mouseOverSquare}
                       selectedSquarePhase={selectedSquarePhase}
                     />
                   );
