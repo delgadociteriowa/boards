@@ -17,8 +17,10 @@ const ChessSquare = ({
       id={id}
       className={`chess__square ${squareType} ${
         pieceSelected && 'selected__square__piece'
-      } ${!pieceSelected && !selectionPhase && 'highlighted__square'}`}
-      onClick={!selectionPhase ? selectedSquarePhase : null}
+      } ${
+        !pieceSelected && !selectionPhase && !pieceChar && 'highlighted__square'
+      }`}
+      onClick={!selectionPhase && !pieceChar ? selectedSquarePhase : null}
     >
       <span
         id={`${pieceName}-${pieceChar}-${pieceColor}`}
