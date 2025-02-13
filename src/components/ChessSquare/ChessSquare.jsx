@@ -12,6 +12,7 @@ const ChessSquare = ({
   selectionPhase,
   selectedSquarePhase,
 }) => {
+  // if (pieceSelected) console.log('Piece Selected: ' + pieceName);
   return (
     <div
       id={id}
@@ -27,7 +28,7 @@ const ChessSquare = ({
         className={`chess__piece ${pieceColor}__piece ${
           pieceChar && selectionPhase && 'selectable__piece'
         } ${pieceSelected && 'selected__piece'} ${
-          !selectionPhase && 'no__pointer'
+          !selectionPhase && !pieceSelected && 'no__pointer'
         }`}
         onClick={selectionPhase || pieceSelected ? selectedPiecePhase : null}
       >
