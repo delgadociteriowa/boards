@@ -14,7 +14,6 @@ const BoardChess = () => {
           pieceChar: '',
           pieceColor: 'empty',
           pieceSelected: false,
-          squareSelected: false,
         });
       }
     }
@@ -221,7 +220,6 @@ const BoardChess = () => {
                   pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
-                  squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
                   selectedSquarePhase={selectedSquarePhase}
@@ -237,7 +235,6 @@ const BoardChess = () => {
                   pieceChar={place.pieceChar}
                   pieceColor={place.pieceColor}
                   pieceSelected={place.pieceSelected}
-                  squareSelected={place.squareSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
                   selectedSquarePhase={selectedSquarePhase}
@@ -255,7 +252,6 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
                       selectedSquarePhase={selectedSquarePhase}
@@ -271,7 +267,6 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
                       selectedSquarePhase={selectedSquarePhase}
@@ -289,7 +284,6 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
                       selectedSquarePhase={selectedSquarePhase}
@@ -305,7 +299,6 @@ const BoardChess = () => {
                       pieceChar={place.pieceChar}
                       pieceColor={place.pieceColor}
                       pieceSelected={place.pieceSelected}
-                      squareSelected={place.squareSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
                       selectedSquarePhase={selectedSquarePhase}

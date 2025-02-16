@@ -7,7 +7,6 @@ const ChessSquare = ({
   pieceChar,
   pieceColor,
   pieceSelected,
-  squareSelected,
   selectedPiecePhase,
   selectionPhase,
   selectedSquarePhase,
