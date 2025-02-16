@@ -10,24 +10,17 @@ const BoardChess = () => {
       for (let j = 1; j <= 8; j++) {
         grid.push({
           id: `${i}-${j}`,
-          pieceName: '',
-          pieceChar: '',
-          pieceColor: 'empty',
+          piece: '',
           pieceSelected: false,
         });
       }
     }
     return grid;
   });
+
   const [selectionPhase, setSelectionPhase] = useState(true);
 
-  const [selectedPiece, setSelectedPiece] = useState({
-    pieceName: '',
-    pieceChar: '',
-    pieceColor: '',
-  });
-
-  // const [selectedPiecePhase, setSelectedPiecePhase] = useState(false);
+  const [selectedPiece, setSelectedPiece] = useState('');
 
   const setNewGame = () => {
     setChessGrid((prevChessGrid) => {
@@ -38,16 +31,13 @@ const BoardChess = () => {
         ['WP1', 'WP2', 'WP3', 'WP4', 'WP5', 'WP6', 'WP7', 'WP8'],
         ['WT1', 'WH1', 'WB1', 'WQ', 'WK', 'WB2', 'WH2', 'WT2'],
       ];
-      const pieces = '♜♞♝♛♚♝♞♜';
       let pieceIndex = 0;
 
       // Clean discard 1
       for (let i = 0; i <= 15; i++) {
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: '',
-          pieceChar: '',
-          pieceColor: 'empty',
+          piece: '',
         };
         pieceIndex++;
       }
@@ -59,9 +49,7 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[0];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: pieceNames[pieceIndex],
-          pieceChar: pieces[pieceIndex],
-          pieceColor: 'black',
+          piece: pieceNames[pieceIndex],
         };
         pieceIndex++;
       }
@@ -72,9 +60,7 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[1];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: pieceNames[pieceIndex],
-          pieceChar: '♟',
-          pieceColor: 'black',
+          piece: pieceNames[pieceIndex],
         };
         pieceIndex++;
       }
@@ -85,9 +71,7 @@ const BoardChess = () => {
       for (let i = 32; i <= 63; i++) {
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: '',
-          pieceChar: '',
-          pieceColor: 'empty',
+          piece: '',
         };
         pieceIndex++;
       }
@@ -99,9 +83,7 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[2];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: pieceNames[pieceIndex],
-          pieceChar: '♟',
-          pieceColor: 'white',
+          piece: pieceNames[pieceIndex],
         };
         pieceIndex++;
       }
@@ -112,9 +94,7 @@ const BoardChess = () => {
         const pieceNames = pieceNamesGroup[3];
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: pieceNames[pieceIndex],
-          pieceChar: pieces[pieceIndex],
-          pieceColor: 'white',
+          piece: pieceNames[pieceIndex],
         };
         pieceIndex++;
       }
@@ -123,9 +103,7 @@ const BoardChess = () => {
       for (let i = 80; i <= 95; i++) {
         newChessGrid[i] = {
           ...newChessGrid[i],
-          pieceName: '',
-          pieceChar: '',
-          pieceColor: 'empty',
+          piece: '',
         };
         pieceIndex++;
       }
@@ -135,20 +113,16 @@ const BoardChess = () => {
   };
 
   const selectedPiecePhase = (e) => {
-    if (e.target.id.split('-')[0] === selectedPiece.pieceName) {
+    if (e.target.id === selectedPiece) {
       setChessGrid((prevChessGrid) =>
         prevChessGrid.map((square) =>
-          square.pieceName === e.target.id.split('-')[0]
+          square.piece === e.target.id
             ? { ...square, pieceSelected: false }
             : square
         )
       );
       setSelectionPhase(true);
-      setSelectedPiece({
-        pieceName: '',
-        pieceChar: '',
-        pieceColor: '',
-      });
+      setSelectedPiece('');
       return undefined;
     }
 
@@ -156,28 +130,22 @@ const BoardChess = () => {
 
     setChessGrid((prevChessGrid) =>
       prevChessGrid.map((square) =>
-        square.pieceName === e.target.id.split('-')[0]
+        square.piece === e.target.id
           ? { ...square, pieceSelected: true }
           : square
       )
     );
     setSelectionPhase(false);
-    setSelectedPiece({
-      pieceName: e.target.id.split('-')[0],
-      pieceChar: e.target.id.split('-')[1],
-      pieceColor: e.target.id.split('-')[2],
-    });
+    setSelectedPiece(e.target.id);
   };
 
   const selectedSquarePhase = (e) => {
     setChessGrid((prevChessGrid) =>
       prevChessGrid.map((square) =>
-        square.pieceName === selectedPiece.pieceName
+        square.piece === selectedPiece
           ? {
               ...square,
-              pieceName: '',
-              pieceChar: '',
-              pieceColor: '',
+              piece: '',
               pieceSelected: false,
             }
           : square
@@ -189,15 +157,13 @@ const BoardChess = () => {
         square.id === e.target.id
           ? {
               ...square,
-              pieceName: selectedPiece.pieceName,
-              pieceChar: selectedPiece.pieceChar,
-              pieceColor: selectedPiece.pieceColor,
+              piece: selectedPiece,
             }
           : square
       )
     );
 
-    setSelectedPiece({ pieceName: '', pieceChar: '', pieceColor: '' });
+    setSelectedPiece('');
     setSelectionPhase(true);
   };
 
@@ -216,9 +182,7 @@ const BoardChess = () => {
                   key={place.id}
                   id={place.id}
                   squareType={'discard__square'}
-                  pieceName={place.pieceName}
-                  pieceChar={place.pieceChar}
-                  pieceColor={place.pieceColor}
+                  piece={place.piece}
                   pieceSelected={place.pieceSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
@@ -231,9 +195,7 @@ const BoardChess = () => {
                   key={place.id}
                   id={place.id}
                   squareType={'discard__square'}
-                  pieceName={place.pieceName}
-                  pieceChar={place.pieceChar}
-                  pieceColor={place.pieceColor}
+                  piece={place.piece}
                   pieceSelected={place.pieceSelected}
                   selectedPiecePhase={selectedPiecePhase}
                   selectionPhase={selectionPhase}
@@ -248,9 +210,7 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'white__square'}
-                      pieceName={place.pieceName}
-                      pieceChar={place.pieceChar}
-                      pieceColor={place.pieceColor}
+                      piece={place.piece}
                       pieceSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
@@ -263,9 +223,7 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'black__square'}
-                      pieceName={place.pieceName}
-                      pieceChar={place.pieceChar}
-                      pieceColor={place.pieceColor}
+                      piece={place.piece}
                       pieceSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
@@ -280,9 +238,7 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'black__square'}
-                      pieceName={place.pieceName}
-                      pieceChar={place.pieceChar}
-                      pieceColor={place.pieceColor}
+                      piece={place.piece}
                       pieceSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
@@ -295,9 +251,7 @@ const BoardChess = () => {
                       key={place.id}
                       id={place.id}
                       squareType={'white__square'}
-                      pieceName={place.pieceName}
-                      pieceChar={place.pieceChar}
-                      pieceColor={place.pieceColor}
+                      piece={place.piece}
                       pieceSelected={place.pieceSelected}
                       selectedPiecePhase={selectedPiecePhase}
                       selectionPhase={selectionPhase}
