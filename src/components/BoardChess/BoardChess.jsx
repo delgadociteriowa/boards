@@ -25,88 +25,61 @@ const BoardChess = () => {
   const setNewGame = () => {
     setChessGrid((prevChessGrid) => {
       const newChessGrid = [...prevChessGrid];
-      const pieceNamesGroup = [
-        ['BT1', 'BH1', 'BB1', 'BQ', 'BK', 'BB2', 'BH2', 'BT2'],
-        ['BP1', 'BP2', 'BP3', 'BP4', 'BP5', 'BP6', 'BP7', 'BP8'],
-        ['WP1', 'WP2', 'WP3', 'WP4', 'WP5', 'WP6', 'WP7', 'WP8'],
-        ['WT1', 'WH1', 'WB1', 'WQ', 'WK', 'WB2', 'WH2', 'WT2'],
-      ];
+      const highPieces = ['T1', 'H1', 'B1', 'Q', 'K', 'B2', 'H2', 'T2'];
       let pieceIndex = 0;
 
-      // Clean discard 1
-      for (let i = 0; i <= 15; i++) {
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: '',
-        };
-        pieceIndex++;
-      }
-
-      pieceIndex = 0;
-
-      // set black pieces
-      for (let i = 16; i <= 23; i++) {
-        const pieceNames = pieceNamesGroup[0];
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: pieceNames[pieceIndex],
-        };
-        pieceIndex++;
-      }
-
-      pieceIndex = 0;
-
-      for (let i = 24; i <= 31; i++) {
-        const pieceNames = pieceNamesGroup[1];
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: pieceNames[pieceIndex],
-        };
-        pieceIndex++;
-      }
-
-      pieceIndex = 0;
-
-      // Clean center
-      for (let i = 32; i <= 63; i++) {
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: '',
-        };
-        pieceIndex++;
-      }
-
-      pieceIndex = 0;
-
-      // set white pieces
-      for (let i = 64; i <= 71; i++) {
-        const pieceNames = pieceNamesGroup[2];
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: pieceNames[pieceIndex],
-        };
-        pieceIndex++;
-      }
-
-      pieceIndex = 0;
-
-      for (let i = 72; i <= 79; i++) {
-        const pieceNames = pieceNamesGroup[3];
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: pieceNames[pieceIndex],
-        };
-        pieceIndex++;
-      }
-
-      // Clean center
-      for (let i = 80; i <= 95; i++) {
-        newChessGrid[i] = {
-          ...newChessGrid[i],
-          piece: '',
-        };
-        pieceIndex++;
-      }
+      newChessGrid.forEach((square, i) => {
+        switch (true) {
+          case i <= 15:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: '',
+            };
+            break;
+          case i >= 16 && i <= 23:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: `B${highPieces[pieceIndex]}`,
+            };
+            i === 23 ? (pieceIndex = 0) : pieceIndex++;
+            break;
+          case i >= 24 && i <= 31:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: `BP${pieceIndex + 1}`,
+            };
+            i === 31 ? (pieceIndex = 0) : pieceIndex++;
+            break;
+          case i >= 32 && i <= 63:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: '',
+            };
+            break;
+          case i >= 64 && i <= 71:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: `WP${pieceIndex + 1}`,
+            };
+            i === 71 ? (pieceIndex = 0) : pieceIndex++;
+            break;
+          case i >= 72 && i <= 79:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: `W${highPieces[pieceIndex]}`,
+            };
+            i === 79 ? (pieceIndex = 0) : pieceIndex++;
+            break;
+          case i >= 80:
+            newChessGrid[i] = {
+              ...newChessGrid[i],
+              piece: '',
+            };
+            break;
+          default:
+            console.log('error');
+        }
+      });
 
       return newChessGrid;
     });
