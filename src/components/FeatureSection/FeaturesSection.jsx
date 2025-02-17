@@ -14,8 +14,8 @@ const FeaturesSection = () => (
         <FeatureCard
           icon={chessIcon}
           alt={'chessboard icon - boxicons.com'}
-          title={'Your Choises'}
-          paragraph={'Place the pieces wherever you want to'}
+          title={'Your Choices'}
+          paragraph={'Place the pieces wherever you want'}
         />
         <FeatureCard
           icon={saveIcon}
@@ -27,7 +27,7 @@ const FeaturesSection = () => (
           icon={devicesIcon}
           alt={'devices icon - boxicons.com'}
           title={'Play Anywhere'}
-          paragraph={'Play on mobile desktop'}
+          paragraph={'Play on mobile, tablet or desktop'}
         />
       </div>
     </div>
