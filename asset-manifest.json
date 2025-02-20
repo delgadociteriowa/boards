@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/boards/static/css/main.6a45911e.css",
-    "main.js": "/boards/static/js/main.6e4bb77b.js",
+    "main.css": "/boards/static/css/main.2d954ea4.css",
+    "main.js": "/boards/static/js/main.7b564c42.js",
     "static/js/488.e8cf6ccf.chunk.js": "/boards/static/js/488.e8cf6ccf.chunk.js",
     "static/media/games-checkers.png": "/boards/static/media/games-checkers.ff604e3391fee981650b.png",
     "static/media/games-go.png": "/boards/static/media/games-go.de9f25ec3aac97c7bf8c.png",
@@ -14,12 +14,12 @@
     "static/media/devices-icon.svg": "/boards/static/media/devices-icon.0d521c6376ec0f288c319b1e04bcfd71.svg",
     "static/media/save-icon.svg": "/boards/static/media/save-icon.d760daf1551c75f6b751835ff2a2f595.svg",
     "static/media/chess-icon.svg": "/boards/static/media/chess-icon.01556823b9d5c9847a01ef1aec648fe7.svg",
-    "main.6a45911e.css.map": "/boards/static/css/main.6a45911e.css.map",
-    "main.6e4bb77b.js.map": "/boards/static/js/main.6e4bb77b.js.map",
+    "main.2d954ea4.css.map": "/boards/static/css/main.2d954ea4.css.map",
+    "main.7b564c42.js.map": "/boards/static/js/main.7b564c42.js.map",
     "488.e8cf6ccf.chunk.js.map": "/boards/static/js/488.e8cf6ccf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a45911e.css",
-    "static/js/main.6e4bb77b.js"
+    "static/css/main.2d954ea4.css",
+    "static/js/main.7b564c42.js"
   ]
 }
