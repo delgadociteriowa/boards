@@ -1,4 +1,4 @@
-# BOARDS v1.0.0
+# BOARDS v1.0.1
 
 Play classic board games with your friends now!
 
