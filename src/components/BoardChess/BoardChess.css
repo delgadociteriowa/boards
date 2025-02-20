@@ -1,0 +1,71 @@
+
+.board__chess {
+  background-color: #ededed;
+}
+
+.board__chess__container {
+  /* outline: 4px solid magenta; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 30px 0;
+}
+
+.board__chess__grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(8, 36px);
+  grid-template-rows: repeat(12, 36px);
+}
+
+.board__chess__options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 0;
+}
+
+.option_button{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 288px;
+  font-size: 1.25rem;
+  background-color: #004237;
+  color: #fff;
+  border: 0px;
+  padding: 15px 40px;
+  border-radius: 8px;
+}
+
+@media (min-width:768px) {
+  /*chess*/
+  .board__chess__container {
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 800px;
+    padding: 50px 0;
+  }
+
+  .board__chess__grid {
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(12, 60px);
+    box-shadow: 0 10px 10px -8px #808080;
+  }
+
+  .board__chess__options {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .option_button {
+    margin-bottom: 18px;
+    box-shadow: 0 10px 10px -8px #808080;
+  }
+  
+  .option_button:hover {
+    cursor: pointer;
+  }
+}
