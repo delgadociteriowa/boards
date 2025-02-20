@@ -73,6 +73,12 @@
   font-weight: 700;
 }
 
+.game__cta:hover {
+  text-decoration: none;
+  color: #a9fddb;
+  border: 1px solid #a9fddb;
+}
+
 .game__soon {
   font-weight: 100;
   margin: auto;

@@ -237,7 +237,7 @@ const BoardChess = () => {
           })}
         </div>
         <div className='board__chess__options'>
-          <button className='option_button' onClick={setNewGame}>
+          <button className='option__button' onClick={setNewGame}>
             Restart Game
           </button>
         </div>

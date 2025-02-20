@@ -40,6 +40,10 @@
   box-shadow: 0 8px 8px -8px #9b9b9b;
 }
 
+.chess__cta:hover {
+  background-color:#d1faea;
+}
+
 @media (min-width:768px) {
   .chess__container{
     display: flex;

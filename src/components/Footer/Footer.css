@@ -26,6 +26,10 @@
   font-size: 5rem;
 }
 
+.footer__link:hover{
+  color: #a9fddb;
+}
+
 .social {
   margin-top: 20px;
 }

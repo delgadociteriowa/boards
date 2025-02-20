@@ -42,6 +42,10 @@
   box-shadow: 0 10px 10px -8px #808080;
 }
 
+.hero__cta:hover {
+  background-color: #006352;
+}
+
 @media (min-width:768px) {
   /*section hero*/
   .hero__container{
